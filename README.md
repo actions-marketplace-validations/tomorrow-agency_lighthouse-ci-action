@@ -1,3 +1,7 @@
+# TMW Lighthouse CI Action
+
+This is a clone of Shopify's lighthouse action, with the removal of functionality that builds a dev store and pushes it through the Shopify CLI. For that to work, we would first need to build the theme, as we don't have a flat file structure.
+
 # shopify/lighthouse-ci-action
 
 [About this repo](#about-this-repo) | [Usage](#usage) | [Authentication](#authentication) | [Configuration](#configuration)
