@@ -1,5 +1,5 @@
 # action.yml
-name: "Run Lighthouse CI on Shopify theme"
+name: "TMW: Run Lighthouse CI on Shopify theme"
 branding:
   icon: shopping-bag
   colour: green
