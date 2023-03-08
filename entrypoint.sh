@@ -146,13 +146,7 @@ module.exports = async (browser) => {
   // Get password cookie if password is set
   if ('$shop_password' !== '') {
     console.error('Getting password cookie...');
-    await page.goto('$host/password');
-    await page.waitForSelector('form[action*=password] input[type="password"]');
-    await page.\$eval('form[action*=password] input[type="password"]', input => input.value = '$shop_password');
-    await Promise.all([
-      page.waitForNavigation(),
-      page.\$eval('form[action*=password]', form => form.submit()),
-    ])
+    await page.goto('$host/password?password=$shop_password');
   }
   // Get preview cookie
   console.error('Getting preview cookie...');
