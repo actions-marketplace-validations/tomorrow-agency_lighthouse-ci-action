@@ -16,13 +16,6 @@
 [[ -n "$INPUT_PRODUCT_HANDLE" ]]    && export SHOP_PRODUCT_HANDLE="$INPUT_PRODUCT_HANDLE"
 [[ -n "$INPUT_COLLECTION_HANDLE" ]] && export SHOP_COLLECTION_HANDLE="$INPUT_COLLECTION_HANDLE"
 
-# Authentication creds
-export SHOP_ACCESS_TOKEN="$INPUT_ACCESS_TOKEN"
-
-# Authentication creds (deprecated)
-[[ -n "$INPUT_APP_ID" ]]               && export SHOP_APP_ID="$INPUT_APP_ID"
-[[ -n "$INPUT_APP_PASSWORD" ]]         && export SHOP_APP_PASSWORD="$INPUT_APP_PASSWORD"
-
 # Optional, these are used by Lighthouse CI to add pass/fail checks on
 # the GitHub Pull Request.
 [[ -n "$INPUT_LHCI_GITHUB_APP_TOKEN" ]] && export LHCI_GITHUB_APP_TOKEN="$INPUT_LHCI_GITHUB_APP_TOKEN"

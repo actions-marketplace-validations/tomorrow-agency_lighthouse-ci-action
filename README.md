@@ -28,7 +28,6 @@ jobs:
         uses: tomorrow-agency/lighthouse-ci-action@v1
         with:
           store: ${{ secrets.SHOP_STORE }}
-          access_token: ${{ secrets.SHOP_ACCESS_TOKEN }}
           collection_handle: ${{ secrets.SHOP_COLLECTION_HANDLE }}
           product_handle: ${{ secrets.SHOP_PRODUCT_HANDLE }}
           lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
@@ -49,7 +48,6 @@ Authentication is done with [Custom App access tokens](https://shopify.dev/apps/
 5. From the `API credentials` tab, install the app.
 6. Take note of the `Admin API access token`.
 7. Add the following to your repository's [GitHub Secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-an-environment):
-   - `SHOP_ACCESS_TOKEN`: the Admin API access token
    - `SHOP_STORE`: Shopify store `<store>.myshopify.com` URL
    - `SHOP_COLLECTION_HANDLE`: Collection handle
    - `SHOP_PRODUCT_HANDLE`: Product handle
@@ -58,7 +56,6 @@ Authentication is done with [Custom App access tokens](https://shopify.dev/apps/
 
 The `tomorrow-agency/lighthouse-ci-action` accepts the following arguments:
 
-- `access_token` - (required) see [Authentication](#authentication)
 - `store` - (required) Shopify store Admin URL, e.g. `my-store.myshopify.com`.
 - `password` - (optional) For password protected shops
 - `product_handle` - (required) Product handle to run the product page Lighthouse run on. Defaults to the first product.
@@ -72,10 +69,3 @@ For the GitHub Status Checks on PR. One of the two arguments is required:
 - `lhci_github_token` - (optional) GitHub personal access token
 
 For more details on the implications of choosing one over the other, refer to the [Lighthouse CI Getting Started Page](https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/getting-started.md#github-status-checks)
-
-### Deprecated authentication configuration
-
-The following were used to authenticate with private apps.
-
-- `app_id` - (deprecated) Shopify store private app ID.
-- `app_password` - (deprecated) Shopify store private app password.
