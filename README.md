@@ -23,7 +23,7 @@ jobs:
     name: Lighthouse
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Lighthouse
         uses: tomorrow-agency/lighthouse-ci-action@v1
         with:
