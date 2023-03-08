@@ -9,33 +9,41 @@ jobs:
     strategy:
       matrix:
         include:
-          - job_name: 'staff store, custom app login'
-            store: shimmering-islands.myshopify.com
-            app_id: ''
-            app_password: ''
+          - job_name: "staff store, custom app login"
+            store: tomorrow-plus-demo.myshopify.com
+            app_id: ""
+            app_password: ""
             access_token: SHOP_ACCESS_TOKEN
-            password: ''
+            password: ""
+            collection_handle: SHOP_COLLECTION_HANDLE
+            product_handle: SHOP_PRODUCT_HANDLE
 
-          - job_name: 'staff store, private app login'
-            store: shimmering-islands.myshopify.com
+          - job_name: "staff store, private app login"
+            store: tomorrow-plus-demo.myshopify.com
             app_id: SHOP_APP_ID
             app_password: SHOP_APP_PASSWORD
-            access_token: ''
-            password: ''
+            access_token: ""
+            password: ""
+            collection_handle: SHOP_COLLECTION_HANDLE
+            product_handle: SHOP_PRODUCT_HANDLE
 
-          - job_name: 'dev store, custom app login'
-            store: cpclermont-dev-store.myshopify.com
-            app_id: ''
+          - job_name: "dev store, custom app login"
+            store: tomorrow-plus-demo.myshopify.com
+            app_id: ""
             app_password: DEV_APP_PASSWORD
             access_token: DEV_ACCESS_TOKEN
             password: DEV_PASSWORD
+            collection_handle: SHOP_COLLECTION_HANDLE
+            product_handle: SHOP_PRODUCT_HANDLE
 
-          - job_name: 'dev store, private app login'
-            store: cpclermont-dev-store.myshopify.com
+          - job_name: "dev store, private app login"
+            store: tomorrow-plus-demo.myshopify.com
             app_id: DEV_APP_ID
             app_password: DEV_APP_PASSWORD
-            access_token: ''
+            access_token: ""
             password: DEV_PASSWORD
+            collection_handle: SHOP_COLLECTION_HANDLE
+            product_handle: SHOP_PRODUCT_HANDLE
 
     name: ${{ matrix.job_name }}
 
@@ -55,6 +63,5 @@ jobs:
           access_token: ${{ secrets[matrix.access_token] }}
           store: ${{ matrix.store }}
           password: ${{ secrets[matrix.password] }}
-          theme_root: "./dawn"
           lhci_min_score_performance: 0.1
           lhci_min_score_accessibility: 0.1

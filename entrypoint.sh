@@ -59,12 +59,6 @@ is_installed() {
 }
 
 cleanup() {
-  if [[ -n "${theme+x}" ]]; then
-    step "Disposing development theme"
-    shopify theme delete -d -f
-    shopify logout
-  fi
-
   if [[ -f "lighthouserc.yml" ]]; then
     rm "lighthouserc.yml"
   fi
@@ -100,6 +94,7 @@ YAML
 
 # Secret environment variable that turns shopify CLI into CI mode that accepts environment credentials
 export CI=1
+export SHOPIFY_SHOP="${SHOP_STORE#*(https://|http://)}"
 
 host="https://${SHOP_STORE#*(https://|http://)}"
 
